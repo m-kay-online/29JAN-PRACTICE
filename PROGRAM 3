@@ -1,0 +1,51 @@
+/*4. Write a program that prompts the user to
+enter a series of numbers, and then stores them
+in a vector. Once the user is done entering
+numbers, the program should display the
+smallest and largest numbers in the vector.*/
+
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main(){
+
+    vector<int> vec1;
+    int element, size;
+    cout<<"Enter the size of your vector"<<endl;
+    cin>>size;
+    for (int i = 0; i < size; i++)
+    {
+        cout<<"Enter an element to add to this vector: ";
+        cin>>element;
+        vec1.push_back(element);
+    }
+
+     if(size == 1){
+        cout<<"Only One Number is there in array ";
+        
+     }else if(size == 0){
+        cout<<"There is no element in array";
+     }else if(size >=2){
+    
+    int largest = 0;
+    
+    for(int i = 0; i < size; i++){
+        if(vec1[i]>largest){
+            largest = vec1[i];
+
+        }
+    }
+    cout<<"\n Largest:- "<<largest<<endl;
+    int smallest;
+    for(int i = 0; i < size; i++){
+        if(vec1[i]<largest){
+            smallest = vec1[i];
+
+        }
+    }
+    cout<<"\n Smallest:- "<<smallest<<endl;
+    }
+     
+}
